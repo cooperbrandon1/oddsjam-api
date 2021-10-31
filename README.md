@@ -4,9 +4,15 @@
 <code>oddsjam-api</code> is a fast, lightweight wrapper for the [OddsJam API](https://developer.oddsjam.com/getting-started). It strives to be as intuitive to use as possible, providing strongly typed requests and responses to ensure predictability and consistency.
 
 ## How do I use it?
-Start by creating an instance of the <code>OddsJamClient</code>:
+Start by installing the <code>oddsjam-api</code> package (currently only on TestPyPI):
+```
+    pip install -i https://test.pypi.org/simple/ oddsjam-api
+```
+
+Create an instance of the <code>OddsJamClient</code>:
 
 ```
+    from OddsJamClient import OddsJamClient;
     Client = OddsJamClient(YOUR_API_KEY);
 ```
 
@@ -14,7 +20,6 @@ Then simply call whichever function you'd like to:
 
 ```    
     from OddsJamClient import OddsJamClient;
-    from Enum.SportsEnum import SportsEnum;
     Client = OddsJamClient(YOUR_API_KEY);
     GamesResponse = Client.GetGames();
 ```
