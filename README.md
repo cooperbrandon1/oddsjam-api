@@ -1,4 +1,4 @@
-# <code>oddsjam-api</code>: A lightweight wrapper OddsJam API wrapper
+# <code>oddsjam-api</code>: A lightweight OddsJam API wrapper
 
 ## What is <code>oddsjam-api</code>?
 <code>oddsjam-api</code> is a fast, lightweight wrapper for the [OddsJam API](https://developer.oddsjam.com/getting-started). It strives to be as intuitive to use as possible, providing strongly typed requests and responses to ensure predictability and consistency.
