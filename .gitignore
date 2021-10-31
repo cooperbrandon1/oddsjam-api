@@ -1,0 +1,19 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Etc
+img/
+*.gz
+*.whl
+*.toml
+*.cfg
+src/oddsjam_api.egg-info/*
