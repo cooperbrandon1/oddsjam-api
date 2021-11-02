@@ -1,6 +1,7 @@
 #region Imports
 import json;
-from Models import Odds
+import collections;
+from Models import Odds;
 from Base import ResponseBase;
 #endregion Imports
 
@@ -12,6 +13,18 @@ class GetOddsResponse(ResponseBase):
     def GetPrices(self):
         '''Returns all prices in the response'''
         return [o.Price for o in self.Odds]
+
+    def GetGameIDs(self):
+        o = self.Odds[0];
+        print(type(o.Game))
+        games = [o.Game for o in self.Odds]
+        g = games[0]
+        print(type(g))
+        return [g['id'] for g in games]
+
+    def GetDuplicateGameIDs(self):
+        games = [o.Game for o in self.Odds]
+        return [g['id'] for g, count in collections.Counter(games).items() if count > 1]
 
     def ParseResponse(self, response:str):
         try:

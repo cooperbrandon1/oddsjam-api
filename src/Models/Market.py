@@ -4,22 +4,22 @@ from Models.Game import Game;
 #endregion Imports
 
 class Market(ModelBase):
-    def __init__(self,game: Game = None, name: str = None):
-        self._game = game;
-        self._name = name;
+    def __init__(cls,game: Game = None, name: str = None):
+        cls._game = game;
+        cls._name = name;
 
     @property
-    def Game(self):
-        return self._game;
+    def Game(cls):
+        return cls._game;
     
     @Game.setter
-    def Game(self, newGame: Game):
-        self._game = newGame;
+    def Game(cls, newGame: Game):
+        cls._game = newGame;
 
     @property
-    def Name(self):
-        return self._name;
+    def Name(cls):
+        return cls._name;
 
     @Name.setter
-    def Name(self, newName: str):
-        self._name = newName;
+    def Name(cls, newName: str):
+        cls._name = newName;

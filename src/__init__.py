@@ -1,1 +1,1 @@
-from .OddsJamClient import OddsJamClient
+from . import OddsJamClient

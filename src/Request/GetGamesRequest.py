@@ -1,15 +1,19 @@
 #region Imports
 from Base import RequestBase;
 from Enum import SportsEnum;
+from dataclasses import dataclass, InitVar;
 #endregion Imports
 
+@dataclass
 class GetGamesRequest(RequestBase):
-    def __init__(self, page: int = None, sport: SportsEnum = None, league: str = None, isLive: bool = None, startDateBefore: str = None, startDateAfter: str = None):
-        super().__init__();
-        self.Page = page;
-        self.Sport = sport;
-        self.IsLive = isLive;
-        self.League = league;
-        self.StartDateBefore = startDateBefore;
-        self.StartDateAfter = startDateAfter;
+    Page: int = None;
+    Sport: SportsEnum = None;
+    IsLive: bool = None;
+    League: str = None;
+    StartDateBefore: str = None;
+    StartDateAfter: str = None;
+    ApiPath: str = '/games';
+
+    def __post_init__(self):
         self.ApiPath = '/games';
+        super().__init__();

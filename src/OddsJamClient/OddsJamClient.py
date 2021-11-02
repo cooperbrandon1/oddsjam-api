@@ -19,16 +19,30 @@ class OddsJamClient():
     def BuildRequest(self, request: Base.RequestBase):
         return self.BaseUrl + request.ApiPath + '?key=' + self.APIKEY + request.GetArgString();
 
+    #region Leagues
     def GetLeagues(self, sport: Enum.SportsEnum = None, isLive: bool = None) -> Response.GetLeaguesResponse:
         '''Call Games endpoint of OddsJam API.
         Required Parameters: None
         Returns: GetLeaguesResponse 
         Functions in response: GetLeagueNames()
         '''
-        request = self.BuildRequest(Enum.GetLeaguesRequest(sport, isLive));
+        request = self.BuildRequest(Request.GetLeaguesRequest(Sport=sport, IsLive=isLive));
         #Response type from API - List<League>
         response = self.HandleAPICall(request);
         return Response.GetLeaguesResponse(response.text);
+    #endregion Leagues
+
+    #region Games
+    def GetFutureGames(self, page: int = None, sport: Enum.SportsEnum = None, league: str = None, isLive: bool = None) -> Response.GetGamesResponse:
+        '''Get all games with a date of either today or onward
+        Required Parameters: None
+        Returns: GetGamesResponse 
+        Functions in response: GetGameIDs()
+        '''
+        request = self.BuildRequest(Request.GetGamesRequest(page,sport,league,isLive,None,datetime.datetime.now().isoformat()));
+        #Response type from API: List<Game>
+        response = self.HandleAPICall(request);
+        return Response.GetGamesResponse(response.text);
 
     def GetGames(self, page: int = None, sport: Enum.SportsEnum = None, league: str = None, isLive: bool = None, 
     startDateBefore: str = None, startDateAfter: str = None) -> Response.GetGamesResponse:
@@ -37,11 +51,14 @@ class OddsJamClient():
         Returns: GetGamesResponse 
         Functions in response: GetGameIDs()
         '''
-        request = self.BuildRequest(Request.GetGamesRequest(page,sport,league,isLive,startDateBefore,startDateAfter));
+        request = self.BuildRequest(Request.GetGamesRequest(Page=page,Sport=sport,League=league,IsLive=isLive,StartDateBefore=startDateBefore,
+        StartDateAfter=startDateAfter)); 
         #Response type from API: List<Game>
         response = self.HandleAPICall(request);
         return Response.GetGamesResponse(response.text);
+    #endregion Games
 
+    #region Markets
     def GetMarkets(self, page: int = None, gameId: int = None, isLive: bool = None) -> Response.GetMarketsResponse:
         '''Call Markets endpoint of OddsJam API.
         Required Parameters: None
@@ -52,7 +69,9 @@ class OddsJamClient():
         #Response type from API: Dict<Game,Name>
         response = self.HandleAPICall(request);
         return Response.GetMarketsResponse(response.text);
+    #endregion Markets
 
+    #region Odds
     def GetOdds(self, page: int = None, sportsbook: Enum.SportsBooksEnum = None, marketName: str = None, sport: Enum.SportsEnum = None, 
     league: str = None, gameId: int = None, isLive: bool = None, startDateBefore: datetime = None, startDateAfter: datetime = None) -> Response.GetOddsResponse:
         '''Call Odds endpoint of OddsJam API.
@@ -60,10 +79,26 @@ class OddsJamClient():
         Returns: GetOddsResponse
         Functions in response: GetPrices()
         '''
-        request = self.BuildRequest(Request.GetOddsRequest(page, sportsbook, marketName, sport, league, gameId, isLive, startDateBefore, startDateAfter));
+        request = self.BuildRequest(Request.GetOddsRequest(Page=page, SportsBook=sportsbook, 
+        MarketName=marketName, Sport=sport, League=league, GameId=gameId, IsLive=isLive, 
+        StartDateBefore=startDateBefore, StartDateAfter=startDateAfter));
         response = self.HandleAPICall(request);
         return Response.GetOddsResponse(response.text);
 
+    def GetFutureOdds(self, page: int = None, sportsbook: Enum.SportsBooksEnum = None, marketName: str = None, sport: Enum.SportsEnum = None, 
+    league: str = None, gameId: int = None, isLive: bool = None) -> Response.GetOddsResponse:
+        '''Call Odds endpoint of OddsJam API.
+        Required Parameters: None
+        Returns: GetOddsResponse
+        Functions in response: GetPrices()
+        '''
+        request = self.BuildRequest(Request.GetOddsRequest(Page=page, Sportsbook=sportsbook, MarketName=marketName, Sport=sport, 
+        League=league, GameId=gameId, IsLive=isLive, StartDateBefore=None, StartDateAfter=datetime.datetime.now().isoformat()));
+        response = self.HandleAPICall(request);
+        return Response.GetOddsResponse(response.text);
+    #endregion Odds
+    
+    #region API calls
     def HandleAPICall(self, request: requests.models.Request):
         #TODO - Properly log/return errors
         try:
@@ -77,3 +112,4 @@ class OddsJamClient():
             print('Invalid request')
             return None;
         return response;
+    #endregion API calls

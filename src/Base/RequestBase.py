@@ -1,10 +1,11 @@
 #region Imports
-import Enum;
+import Enum
+from Base.EnforceTypes import EnforceTypes;
 #endregion Imports
 
-class RequestBase():
+class RequestBase(EnforceTypes):
     def __init__(cls):
-        cls.ApiPath = None;
+        super().__init__();
     
     @classmethod
     def GetArgString(cls):  
@@ -19,7 +20,7 @@ class RequestBase():
         if(len(argStr) > 1):
             return argStr;
         return '';
-        
+    
     @classmethod
     def ConvertArg(cls,arg):
         if(type(arg) is int):

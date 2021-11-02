@@ -1,11 +1,14 @@
 #region Imports
+from dataclasses import dataclass;
 from Base.RequestBase import RequestBase;
 #endregion Imports
 
+@dataclass
 class GetMarketsRequest(RequestBase):
-    def __init__(self, page: int = None, gameId: int = None, isLive: bool = None):
-        super().__init__();
-        self.Page = page;
-        self.GameId = gameId;
-        self.IsLive = isLive;
+    Page: int = None;
+    GameId: int = None;
+    IsLive: bool = None;
+
+    def __post_init__(self):
         self.ApiPath = '/markets';
+        super().__init__();
