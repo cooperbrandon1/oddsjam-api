@@ -12,10 +12,10 @@ class GetGamesResponse(ResponseBase):
 
     def GetGameIDs(self):
         '''Returns all game IDs in the response'''
-        return [g.ID for g in self.Games]
+        return [g.id for g in self.Games]
 
     def ParseResponse(self, response:str):
         try:
             return json.loads(response, object_hook=lambda d: Game(**d));
-        except:
+        except Exception as ex:
             return None;

@@ -1,6 +1,6 @@
 #region Imports
 from dataclasses import dataclass;
-from Base.RequestBase import RequestBase;
+from Base import RequestBase;
 #endregion Imports
 
 @dataclass

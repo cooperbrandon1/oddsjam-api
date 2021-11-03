@@ -1,6 +1,6 @@
 #region Imports
 from dataclasses import dataclass;
-from Base.RequestBase import RequestBase;
+from Base import RequestBase;
 from Enum.SportsEnum import SportsEnum;
 #endregion Imports
 

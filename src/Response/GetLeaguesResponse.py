@@ -15,4 +15,4 @@ class GetLeaguesResponse(ResponseBase):
 
     def GetLeagueNames(self):
         '''Returns all league names in the response'''
-        return [l.Name for l in self.Leagues];
+        return [l.name for l in self.Leagues];

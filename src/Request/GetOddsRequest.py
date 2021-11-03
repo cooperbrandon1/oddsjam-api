@@ -1,7 +1,6 @@
 #region Imports
-import datetime;
 from dataclasses import dataclass;
-from Base.RequestBase import RequestBase;
+from Base import RequestBase;
 from Enum.SportsEnum import SportsEnum;
 from Enum.SportsBooksEnum import SportsBooksEnum
 #endregion Imports
@@ -17,7 +16,3 @@ class GetOddsRequest(RequestBase):
     IsLive: bool = None
     StartDateBefore: str = None
     StartDateAfter: str = None
-
-    def __post_init__(self):
-        self.ApiPath = '';
-        super().__init__();

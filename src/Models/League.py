@@ -1,11 +1,8 @@
-class League():
-    def __init__(cls,name: str = None):
-        cls._name = name;
+#region Imports
+from Base import ModelBase;
+from dataclasses import dataclass;
+#endregion Imports
 
-    @property
-    def Name(cls):
-        return cls._name;
-
-    @Name.setter
-    def Name(cls, newName):
-        cls._name = newName;
+@dataclass
+class League(ModelBase):
+    name: str = None;

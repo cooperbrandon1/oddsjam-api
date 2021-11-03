@@ -3,10 +3,7 @@ import Enum
 from Base.EnforceTypes import EnforceTypes;
 #endregion Imports
 
-class RequestBase(EnforceTypes):
-    def __init__(cls):
-        super().__init__();
-    
+class RequestBase:    
     @classmethod
     def GetArgString(cls):  
         #Get the list of attributes of the given subclass 
@@ -27,3 +24,6 @@ class RequestBase(EnforceTypes):
             return str(arg)
         elif(type(arg) is Enum.SportsEnum or type(arg) is Enum.SportsBooksEnum):
             return str(arg.value)
+
+    def __post_init__(cls):
+        EnforceTypes(cls);
