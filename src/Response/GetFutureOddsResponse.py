@@ -7,7 +7,6 @@ from Base import ResponseBase;
 class GetFutureOddsResponse(ResponseBase):
     def __init__(self, response: str):
         super().__init__(response);
-        b = json.loads(response);
         obj = self.ParseResponse(response);
         self.FutureOdds = [f for f in obj]
         

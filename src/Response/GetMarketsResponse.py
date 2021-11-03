@@ -12,7 +12,3 @@ class GetMarketsResponse(ResponseBase):
     def ParseResponse(self, response: str):
         obj = json.loads(response);
         return [Market.fromDict(m) for m in obj] 
-
-    def GetMarketNames(self):
-        '''Returns all market names in the response'''
-        return [m.Name for m in self.Markets];

@@ -46,9 +46,7 @@ Or work with the raw response from the API:
     Jobj = json.loads(raw);
 ```
 
-All parameters are optional, and are listed in the docstring of each function in the Client:
-
- ![image](img/ClientFunctionToolTip.png)
+All parameters are optional, and are listed in the docstring of each function in the Client.
 
 In addition to built in functions in the responses, individual objects/properties of the parsed responses can also be accessed:
 
