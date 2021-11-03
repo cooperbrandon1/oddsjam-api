@@ -47,14 +47,3 @@ Or accessed via the raw response from the API:
 ```
 
 All parameters are optional, and are listed in the docstring of each function in the Client.
-
-In addition to built in functions in the responses, individual objects/properties of the parsed responses can also be accessed:
-
-```
-    from OddsJamClient import OddsJamClient;
-    Client = OddsJamClient(YOUR_API_KEY);
-    GamesResponse = Client.GetGames();
-    GameOne = GamesResponse.Games[0];
-    print(GameOne.ID)
-    print(GameOne.Sport)
-```
