@@ -33,13 +33,13 @@ Parameters are not required for any function call, but can be provided as desire
     GamesResponse = Client.GetGames(league='ncaa', sport=SportsEnum.football);
 ```
 
-And use either the built-in functions for the response type:
+And can be accessed by as parsed objects:
 
 ```
-    GameIds = GamesResponse.GetGameIds();
+    AwayTeams = [g.away_team for g in GamesResponse.Games];
 ```
 
-Or work with the raw response from the API:
+Or accessed via the raw response from the API:
 
 ```
     Raw = GamesResponse.RawResponse;

@@ -12,7 +12,3 @@ class GetLeaguesResponse(ResponseBase):
     def ParseResponse(self, response: str):
         responseObj = json.loads(response);
         return [League(l) for l in responseObj['leagues']]
-
-    def GetLeagueNames(self):
-        '''Returns all league names in the response'''
-        return [l.name for l in self.Leagues];
