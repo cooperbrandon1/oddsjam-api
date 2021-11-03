@@ -85,25 +85,30 @@ class OddsJamClient():
         response = self.HandleAPICall(request);
         return Response.GetOddsResponse(response.text);
 
-    def GetFutureOdds(self, page: int = None, sportsbook: Enum.SportsBooksEnum = None, marketName: str = None, sport: Enum.SportsEnum = None, 
-    league: str = None, gameId: int = None, isLive: bool = None) -> Response.GetOddsResponse:
-        '''Call Odds endpoint of OddsJam API.
-        Required Parameters: None
-        Returns: GetOddsResponse
-        Functions in response: GetPrices()
-        '''
-        request = self.BuildRequest(Request.GetOddsRequest(Page=page, Sportsbook=sportsbook, MarketName=marketName, Sport=sport, 
-        League=league, GameId=gameId, IsLive=isLive, StartDateBefore=None, StartDateAfter=datetime.datetime.now().isoformat()));
-        response = self.HandleAPICall(request);
-        return Response.GetOddsResponse(response.text);
     #endregion Odds
+
+    #region Futures
+    def GetFutures(self, page: int = None, sport: Enum.SportsEnum = None, league: str = None):
+        request = self.BuildRequest(Request.GetFuturesRequest(Page = page, Sport=sport, League=league));
+        response = self.HandleAPICall(request);
+        return Response.GetFuturesResponse(response.text);
+    #endregion Futures
+
+    #region Future Odds
+
+    def GetFutureOdds(self, page: int = None, sportsBook: Enum.SportsBooksEnum = None, 
+    futureName: str = None, sport = Enum.SportsEnum, league: str = None, futureId: int = None):
+        request = self.BuildRequest(Request.GetFutureOddsRequest(Page = page, SportsBook=sportsBook, League=league));
+        response = self.HandleAPICall(request);
+        return Response.GetFutureOddsResponse(response.text);
+    #endregion Future Odds
     
     #region API calls
     def HandleAPICall(self, request: requests.models.Request):
         #TODO - Properly log/return errors
         try:
             return self.HandleResponse(requests.get(request));
-        except:
+        except Exception as exc:
             print('error sending request');
 
     def HandleResponse(self, response: requests.models.Response):

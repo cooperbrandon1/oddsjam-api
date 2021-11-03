@@ -1,0 +1,44 @@
+[
+  {
+    "id":2,
+    "sport":"football",
+    "league":"NFL",
+    "name":"NFC South Division Winner"
+  },
+  {
+    "id":30,
+    "sport":"football",
+    "league":"NFL",
+    "name":"NFC East Division Winner"
+  },
+  {
+    "id":20,
+    "sport":"football",
+    "league":"NFL",
+    "name":"NFC Conference Winner"
+  },
+  {
+    "id":7,
+    "sport":"football",
+    "league":"NFL",
+    "name":"AFC West Division Winner"
+  },
+  {
+    "id":17,
+    "sport":"football",
+    "league":"NFL",
+    "name":"AFC South Division Winner"
+  },
+  {
+    "id":29,
+    "sport":"football",
+    "league":"NFL",
+    "name":"Regular Season Wins"
+  },
+  {
+    "id":11,
+    "sport":"football",
+    "league":"NFL",
+    "name":"NFC West Division Winner"
+  }
+]

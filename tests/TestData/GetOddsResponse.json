@@ -1,0 +1,65 @@
+[
+  {
+    "game": {
+      "id": 121408,
+      "sport": "football",
+      "league": "NFL",
+      "start_date": "2021-08-27T19:00:00-04:00",
+      "away_team": "Indianapolis Colts",
+      "home_team": "Detroit Lions",
+      "is_live": false
+    },
+    "market_name": "Total Points",
+    "sports_book": {
+      "name": "William Hill"
+    },
+    "name": "Under 32.5",
+    "price": -110.0,
+    "is_main": false,
+    "is_live": false,
+    "checked_date": "2021-08-24T20:44:13.601355-04:00",
+    "changed_date": "2021-08-24T20:44:13.601370-04:00"
+  },
+  {
+    "game": {
+      "id": 121408,
+      "sport": "football",
+      "league": "NFL",
+      "start_date": "2021-08-27T19:00:00-04:00",
+      "away_team": "Indianapolis Colts",
+      "home_team": "Detroit Lions",
+      "is_live": false
+    },
+    "market_name": "Total Points",
+    "sports_book": {
+      "name": "BetMGM"
+    },
+    "name": "Over 32.5",
+    "price": -110.0,
+    "is_main": false,
+    "is_live": false,
+    "checked_date": "2021-08-24T20:44:14.279342-04:00",
+    "changed_date": "2021-08-24T20:44:14.279352-04:00"
+  },
+  {
+    "game": {
+      "id": 121408,
+      "sport": "football",
+      "league": "NFL",
+      "start_date": "2021-08-27T19:00:00-04:00",
+      "away_team": "Indianapolis Colts",
+      "home_team": "Detroit Lions",
+      "is_live": false
+    },
+    "market_name": "Total Points",
+    "sports_book": {
+      "name": "BetMGM"
+    },
+    "name": "Under 32.5",
+    "price": -110.0,
+    "is_main": false,
+    "is_live": false,
+    "checked_date": "2021-08-24T20:44:14.280261-04:00",
+    "changed_date": "2021-08-24T20:44:14.280270-04:00"
+  }
+]

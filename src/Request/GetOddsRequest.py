@@ -16,3 +16,4 @@ class GetOddsRequest(RequestBase):
     IsLive: bool = None
     StartDateBefore: str = None
     StartDateAfter: str = None
+    ApiPath: str = '';

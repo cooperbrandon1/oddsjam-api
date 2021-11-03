@@ -1,0 +1,56 @@
+[
+    {
+      "id":1687,
+      "sport":"football",
+      "league":"NCAA",
+      "start_date":"2021-08-28T13:00:00-04:00",
+      "away_team":"Nebraska",
+      "home_team":"Illinois",
+      "is_live":false
+    },
+    {
+      "id":1681,
+      "sport":"football",
+      "league":"NCAA",
+      "start_date":"2021-08-28T14:00:00-04:00",
+      "away_team":"Connecticut",
+      "home_team":"Fresno State",
+      "is_live":false
+    },
+    {
+      "id":1724,
+      "sport":"football",
+      "league":"NCAA",
+      "start_date":"2021-08-28T15:30:00-04:00",
+      "away_team":"Hawaii",
+      "home_team":"Ucla",
+      "is_live":false
+    },
+    {
+      "id":1741,
+      "sport":"football",
+      "league":"NCAA",
+      "start_date":"2021-08-28T18:00:00-04:00",
+      "away_team":"Eastern Illinois",
+      "home_team":"Indiana State",
+      "is_live":false
+    },
+    {
+      "id":1743,
+      "sport":"football",
+      "league":"NCAA",
+      "start_date":"2021-08-28T19:00:00-04:00",
+      "away_team":"Alcorn State",
+      "home_team":"Nc Central",
+      "is_live":false
+    },
+    {
+      "id":1739,
+      "sport":"football",
+      "league":"NCAA",
+      "start_date":"2021-08-28T19:00:00-04:00",
+      "away_team":"Southern Utah",
+      "home_team":"San Jose State",
+      "is_live":false
+    }
+  ]

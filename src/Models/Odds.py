@@ -1,8 +1,8 @@
 #region Imports
 import datetime;
 from dataclasses import dataclass;
-from Enum.SportsBooksEnum import SportsBooksEnum;
-from Models.Game import Game;
+from Enum import SportsBooksEnum;
+from Models import Game;
 from Base import ModelBase;
 #endregion Imports
 
@@ -17,6 +17,3 @@ class Odds(ModelBase):
     is_live: bool = None
     checked_date: datetime = None
     changed_date: datetime = None
-
-    def __post_init__(self):
-        super().__init__();

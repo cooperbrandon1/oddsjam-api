@@ -5,11 +5,8 @@ from dataclasses import dataclass
 #endregion Imports
 
 @dataclass
-class Game(ModelBase):
+class Future(ModelBase):
     id: int = None;
     sport: SportsEnum = None;
     league: str = None;
-    start_date: str = None;
-    away_team: str = None;
-    home_team: str = None;
-    is_live: bool = None;
+    name: str = None;

@@ -1,0 +1,146 @@
+[
+  {
+    "game":{
+      "id":2397,
+      "sport":"baseball",
+      "league":"MLB",
+      "start_date":"2021-09-01T21:45:00-04:00",
+      "away_team":"Milwaukee Brewers",
+      "home_team":"San Francisco Giants",
+      "is_live":false
+    },
+    "name":"1st 3 Innings Run Line"
+  },
+  {
+    "game":{
+      "id":2397,
+      "sport":"baseball",
+      "league":"MLB",
+      "start_date":"2021-09-01T21:45:00-04:00",
+      "away_team":"Milwaukee Brewers",
+      "home_team":"San Francisco Giants",
+      "is_live":false
+    },
+    "name":"Moneyline"
+  },
+  {
+    "game":{
+      "id":2397,
+      "sport":"baseball",
+      "league":"MLB",
+      "start_date":"2021-09-01T21:45:00-04:00",
+      "away_team":"Milwaukee Brewers",
+      "home_team":"San Francisco Giants",
+      "is_live":false
+    },
+    "name":"Run Line"
+  },
+  {
+    "game":{
+      "id":2397,
+      "sport":"baseball",
+      "league":"MLB",
+      "start_date":"2021-09-01T21:45:00-04:00",
+      "away_team":"Milwaukee Brewers",
+      "home_team":"San Francisco Giants",
+      "is_live":false
+    },
+    "name":"Total Runs"
+  },
+  {
+    "game":{
+      "id":2397,
+      "sport":"baseball",
+      "league":"MLB",
+      "start_date":"2021-09-01T21:45:00-04:00",
+      "away_team":"Milwaukee Brewers",
+      "home_team":"San Francisco Giants",
+      "is_live":false
+    },
+    "name":"Race To 2 Runs"
+  },
+  {
+    "game":{
+      "id":2397,
+      "sport":"baseball",
+      "league":"MLB",
+      "start_date":"2021-09-01T21:45:00-04:00",
+      "away_team":"Milwaukee Brewers",
+      "home_team":"San Francisco Giants",
+      "is_live":false
+    },
+    "name":"Race To 3 Runs"
+  },
+  {
+    "game":{
+      "id":2397,
+      "sport":"baseball",
+      "league":"MLB",
+      "start_date":"2021-09-01T21:45:00-04:00",
+      "away_team":"Milwaukee Brewers",
+      "home_team":"San Francisco Giants",
+      "is_live":false
+    },
+    "name":"Race To 5 Runs"
+  },
+  {
+    "game":{
+      "id":2397,
+      "sport":"baseball",
+      "league":"MLB",
+      "start_date":"2021-09-01T21:45:00-04:00",
+      "away_team":"Milwaukee Brewers",
+      "home_team":"San Francisco Giants",
+      "is_live":false
+    },
+    "name":"Race To 4 Runs"
+  },
+  {
+    "game":{
+      "id":2397,
+      "sport":"baseball",
+      "league":"MLB",
+      "start_date":"2021-09-01T21:45:00-04:00",
+      "away_team":"Milwaukee Brewers",
+      "home_team":"San Francisco Giants",
+      "is_live":false
+    },
+    "name":"Race To 6 Runs"
+  },
+  {
+    "game":{
+      "id":2397,
+      "sport":"baseball",
+      "league":"MLB",
+      "start_date":"2021-09-01T21:45:00-04:00",
+      "away_team":"Milwaukee Brewers",
+      "home_team":"San Francisco Giants",
+      "is_live":false
+    },
+    "name":"Race To 7 Runs"
+  },
+  {
+    "game":{
+      "id":2397,
+      "sport":"baseball",
+      "league":"MLB",
+      "start_date":"2021-09-01T21:45:00-04:00",
+      "away_team":"Milwaukee Brewers",
+      "home_team":"San Francisco Giants",
+      "is_live":false
+    },
+    "name":"First Team To Score"
+  },
+  {
+    "game":{
+      "id":2397,
+      "sport":"baseball",
+      "league":"MLB",
+      "start_date":"2021-09-01T21:45:00-04:00",
+      "away_team":"Milwaukee Brewers",
+      "home_team":"San Francisco Giants",
+      "is_live":false
+    },
+    "name":"Lead After 3 Innings"
+  }
+]

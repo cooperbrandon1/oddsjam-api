@@ -1,0 +1,62 @@
+[
+  {
+    "future":{
+      "id":11,
+      "sport":"football",
+      "league":"NFL",
+      "name":"NFC West Division Winner"
+    },
+    "sports_book":{
+      "name":"BetMGM"
+    },
+    "name":"Arizona Cardinals",
+    "price":-120.0,
+    "checked_date":"2021-11-01T23:09:16.217713-04:00",
+    "changed_date":"2021-11-01T23:09:16.217725-04:00"
+  },
+  {
+    "future":{
+      "id":11,
+      "sport":"football",
+      "league":"NFL",
+      "name":"NFC West Division Winner"
+    },
+    "sports_book":{
+      "name":"BetMGM"
+    },
+    "name":"Los Angeles Rams",
+    "price":100.0,
+    "checked_date":"2021-11-01T23:09:16.220660-04:00",
+    "changed_date":"2021-11-01T23:09:16.220670-04:00"
+  },
+  {
+    "future":{
+      "id":11,
+      "sport":"football",
+      "league":"NFL",
+      "name":"NFC West Division Winner"
+    },
+    "sports_book":{
+      "name":"BetMGM"
+    },
+    "name":"San Francisco 49ers",
+    "price":3500.0,
+    "checked_date":"2021-11-01T23:09:16.223104-04:00",
+    "changed_date":"2021-11-01T23:09:16.223114-04:00"
+  },
+  {
+    "future":{
+      "id":11,
+      "sport":"football",
+      "league":"NFL",
+      "name":"NFC West Division Winner"
+    },
+    "sports_book":{
+      "name":"BetMGM"
+    },
+    "name":"Seattle Seahawks",
+    "price":10000.0,
+    "checked_date":"2021-11-01T23:09:16.226866-04:00",
+    "changed_date":"2021-11-01T23:09:16.226876-04:00"
+  }
+]

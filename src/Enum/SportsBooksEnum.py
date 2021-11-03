@@ -1,5 +1,6 @@
-from enum import Enum
-class SportsBooksEnum(Enum):
+from enum import Enum;
+from Enum.Meta import StringEnumMeta;
+class SportsBooksEnum(Enum, metaclass=StringEnumMeta):
     Pinnacle = 'PINNACLE'
     FiveDimes = '5DIMES'
     DraftKings = 'DRAFTKINGS'

@@ -8,7 +8,4 @@ from Enum.SportsEnum import SportsEnum;
 class GetLeaguesRequest(RequestBase):
     Sport: SportsEnum = None;
     IsLive: bool = None;
-
-    def __post_init__(self):
-        self.ApiPath = '/leagues';
-        super().__init__();
+    ApiPath: str = '/leagues';

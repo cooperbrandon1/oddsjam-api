@@ -8,7 +8,4 @@ class GetMarketsRequest(RequestBase):
     Page: int = None;
     GameId: int = None;
     IsLive: bool = None;
-
-    def __post_init__(self):
-        self.ApiPath = '/markets';
-        super().__init__();
+    ApiPath: str = '/markets';

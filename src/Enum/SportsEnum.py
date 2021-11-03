@@ -1,5 +1,6 @@
-from enum import Enum
-class SportsEnum(Enum):
+from enum import Enum;
+from Enum.Meta import StringEnumMeta;
+class SportsEnum(Enum, metaclass=StringEnumMeta):
     football = 'football'
     basketball = 'basketball'
     baseball = 'baseball'
