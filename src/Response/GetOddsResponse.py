@@ -14,9 +14,5 @@ class GetOddsResponse(ResponseBase):
         try:
             obj = json.loads(response);
             return [Odds.fromDict(m) for m in obj] 
-        except Exception as error:
-            b = error;
-            return None;
-
-    def ToDataFrame(self):
-        return super().ToDataFrame(self.Odds, 'game');
+        except Exception as ex:
+            return ex;

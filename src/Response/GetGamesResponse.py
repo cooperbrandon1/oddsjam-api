@@ -14,7 +14,4 @@ class GetGamesResponse(ResponseBase):
         try:
             return json.loads(response, object_hook=lambda d: Game(**d));
         except Exception as ex:
-            return None;
-
-    def ToDataFrame(self):
-        return super().ToDataFrame(self.Games, 'id');
+            return ex;

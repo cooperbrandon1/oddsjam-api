@@ -13,9 +13,6 @@ class GetFutureOddsResponse(ResponseBase):
     def ParseResponse(self, response:str):
         try:
             obj = json.loads(response);
-            return [FutureOdds.fromDict(m) for m in obj] 
+            return [FutureOdds.fromDict(m) for m in obj]; 
         except Exception as ex:
-            return None;
-
-    def ToDataFrame(self):
-        return super().ToDataFrame(self.FutureOdds, 'future');
+            return ex;
