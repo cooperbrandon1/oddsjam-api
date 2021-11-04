@@ -15,3 +15,6 @@ class GetFuturesResponse(ResponseBase):
             return json.loads(response, object_hook=lambda d: Future(**d));
         except Exception as ex:
             return None;
+
+    def ToDataFrame(self):
+        return super().ToDataFrame(self.Futures, 'id');

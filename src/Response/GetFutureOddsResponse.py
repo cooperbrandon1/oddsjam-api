@@ -16,3 +16,6 @@ class GetFutureOddsResponse(ResponseBase):
             return [FutureOdds.fromDict(m) for m in obj] 
         except Exception as ex:
             return None;
+
+    def ToDataFrame(self):
+        return super().ToDataFrame(self.FutureOdds, 'future');

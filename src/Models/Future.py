@@ -7,6 +7,6 @@ from dataclasses import dataclass
 @dataclass
 class Future(ModelBase):
     id: int = None;
-    sport: SportsEnum = None;
+    sport: str = None;
     league: str = None;
     name: str = None;

@@ -17,3 +17,6 @@ class GetOddsResponse(ResponseBase):
         except Exception as error:
             b = error;
             return None;
+
+    def ToDataFrame(self):
+        return super().ToDataFrame(self.Odds, 'game');

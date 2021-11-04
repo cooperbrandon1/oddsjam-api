@@ -12,3 +12,6 @@ class GetLeaguesResponse(ResponseBase):
     def ParseResponse(self, response: str):
         responseObj = json.loads(response);
         return [League(l) for l in responseObj['leagues']]
+        
+    def ToDataFrame(self):
+        return super().ToDataFrame(self.Leagues, 'name');

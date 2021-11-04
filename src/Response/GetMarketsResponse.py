@@ -12,3 +12,6 @@ class GetMarketsResponse(ResponseBase):
     def ParseResponse(self, response: str):
         obj = json.loads(response);
         return [Market.fromDict(m) for m in obj] 
+
+    def ToDataFrame(self):
+        return super().ToDataFrame(self.Markets, 'name');

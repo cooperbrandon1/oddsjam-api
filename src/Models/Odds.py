@@ -10,7 +10,7 @@ from Base import ModelBase;
 class Odds(ModelBase):
     game: Game = None
     market_name: str = None
-    sports_book: SportsBooksEnum = None
+    sports_book: str = None
     name: str = None
     price: float = None
     is_main: bool = None

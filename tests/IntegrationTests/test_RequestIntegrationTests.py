@@ -7,6 +7,7 @@ import Response;
 import unittest;
 from unittest import mock;
 import json;
+#gross, clean this up
 import os
 absolutepath = os.path.abspath(__file__)
 fileDirectory = os.path.dirname(absolutepath)
