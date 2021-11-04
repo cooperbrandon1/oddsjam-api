@@ -10,8 +10,8 @@ class GetLeaguesResponse(ResponseBase):
         self.Leagues = self.ParseResponse(self.RawResponse);
     
     def ParseResponse(self, response: str):
-        responseObj = json.loads(response);
-        return [League(l) for l in responseObj['leagues']]
-        
-    def ToDataFrame(self):
-        return super().ToDataFrame(self.Leagues, 'name');
+        try:
+            responseObj = json.loads(response);
+            return [League(l) for l in responseObj['leagues']];
+        except Exception as ex:
+            return ex;
