@@ -1,7 +1,7 @@
 #region Imports
 import json;
 from Base import ResponseBase;
-from Models import Market;
+from Models import Market, Game;
 #endregion Imports
 
 class GetMarketsResponse(ResponseBase):
@@ -12,6 +12,9 @@ class GetMarketsResponse(ResponseBase):
     def ParseResponse(self, response: str):
         try:
             obj = json.loads(response);
-            return [Market.fromDict(m) for m in obj];
+            marketObjects = [Market.fromDict(m) for m in obj];
+            for m in marketObjects:
+                m.game = Game.fromDict(m.game);
+            return marketObjects;
         except Exception as ex:
             return ex;

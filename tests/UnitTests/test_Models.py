@@ -10,11 +10,13 @@ class test_Models(unittest.TestCase):
 
     #region Game
     def test_Game_NoArgs_ShouldReturnSuccess(self):
-        model = Models.Game(sport=SportsEnum.football);
+        model = Models.Game();
         self.assertIsInstance(model, Models.Game);
         
     def test_Game_ValidArgs_ShouldReturnSuccess(self):
         model = Models.Game(id=1);
+        model = Models.Game(sport=SportsEnum.football);
+        model = Models.Game(sport='football');
         self.assertIsInstance(model, Models.Game);
         
     def test_Game_InvalidArgs_ShouldReturnTypeError(self):
@@ -61,9 +63,36 @@ class test_Models(unittest.TestCase):
         
     def test_Odds_InvalidArgs_ShouldReturnTypeError(self):
         with self.assertRaises(TypeError):
-            model = Models.Odds(id=1234);
-    
+            model = Models.Odds(name=1234);
     #endregion Odds
     
-def Run(self):
+    #region Futures
+    def test_Futures_NoArgs_ShouldReturnSuccess(self):
+        model = Models.Future();
+        self.assertIsInstance(model, Models.Future);
+        
+    def test_Futures_ValidArgs_ShouldReturnSuccess(self):
+        model = Models.Future(name='TestName');
+        self.assertIsInstance(model, Models.Future);
+        
+    def test_Futures_InvalidArgs_ShouldReturnTypeError(self):
+        with self.assertRaises(TypeError):
+            model = Models.Future(name=1234);
+    #endregion Futures
+    
+    #region FutureOdds
+    def test_Futures_NoArgs_ShouldReturnSuccess(self):
+        model = Models.FutureOdds();
+        self.assertIsInstance(model, Models.FutureOdds);
+        
+    def test_Futures_ValidArgs_ShouldReturnSuccess(self):
+        model = Models.FutureOdds(name='TestName');
+        self.assertIsInstance(model, Models.FutureOdds);
+        
+    def test_Futures_InvalidArgs_ShouldReturnTypeError(self):
+        with self.assertRaises(TypeError):
+            model = Models.FutureOdds(name=1234);
+    #endregion FutureOdds
+    
+if __name__ == '__main__':
     unittest.main();

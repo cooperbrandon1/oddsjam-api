@@ -7,7 +7,7 @@ from dataclasses import dataclass
 @dataclass
 class Game(ModelBase):
     id: int = None;
-    sport: str = None;
+    sport: SportsEnum = None;
     league: str = None;
     start_date: str = None;
     away_team: str = None;

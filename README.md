@@ -39,11 +39,16 @@ And can be accessed by as parsed objects:
     AwayTeams = [g.away_team for g in GamesResponse.Games];
 ```
 
-Or accessed via the raw response from the API:
+Nested objects can be accessed similarly:
+
+```
+    OddsResponse = Client.GetOdds();
+    print(OddsResponse.Odds[0].game.sport)
+```
+
+The raw response from the API is also accessible via the *RawResponse* property of any *Response* object:
 
 ```
     Raw = GamesResponse.RawResponse;
     Jobj = json.loads(raw);
 ```
-
-All parameters are optional, and are listed in the docstring of each function in the Client.

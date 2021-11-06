@@ -1,5 +1,4 @@
 #region Imports
-from Base import RequestBase
 import Enum;
 import Base;
 import Request;
@@ -33,17 +32,6 @@ class OddsJamClient():
     #endregion Leagues
 
     #region Games
-    def GetFutureGames(self, page: int = None, sport: Enum.SportsEnum = None, league: str = None, isLive: bool = None) -> Response.GetGamesResponse:
-        '''Get all games with a date of either today or onward
-        Required Parameters: None
-        Returns: GetGamesResponse 
-        Functions in response: GetGameIDs()
-        '''
-        request = self.BuildRequest(Request.GetGamesRequest(page,sport,league,isLive,None,datetime.datetime.now().isoformat()));
-        #Response type from API: List<Game>
-        response = self.HandleAPICall(request);
-        return Response.GetGamesResponse(response.text);
-
     def GetGames(self, page: int = None, sport: Enum.SportsEnum = None, league: str = None, isLive: bool = None, 
     startDateBefore: str = None, startDateAfter: str = None) -> Response.GetGamesResponse:
         '''Call Games endpoint of OddsJam API.
@@ -88,17 +76,16 @@ class OddsJamClient():
     #endregion Odds
 
     #region Futures
-    def GetFutures(self, page: int = None, sport: Enum.SportsEnum = None, league: str = None):
+    def GetFutures(self, page: int = None, sport: Enum.SportsEnum = None, league: str = None) -> Response.GetFuturesResponse:
         request = self.BuildRequest(Request.GetFuturesRequest(Page = page, Sport=sport, League=league));
         response = self.HandleAPICall(request);
         return Response.GetFuturesResponse(response.text);
     #endregion Futures
 
     #region Future Odds
-
     def GetFutureOdds(self, page: int = None, sportsBook: Enum.SportsBooksEnum = None, 
-    futureName: str = None, sport = Enum.SportsEnum, league: str = None, futureId: int = None):
-        request = self.BuildRequest(Request.GetFutureOddsRequest(Page = page, SportsBook=sportsBook, League=league));
+    futureName: str = None, sport: Enum.SportsEnum = None, league: str = None, futureId: int = None) -> Response.GetFutureOddsResponse:
+        request = self.BuildRequest(Request.GetFutureOddsRequest(Page = page, SportsBook=sportsBook, FutureName=futureName, Sport=sport, League=league, FutureID = futureId));
         response = self.HandleAPICall(request);
         return Response.GetFutureOddsResponse(response.text);
     #endregion Future Odds

@@ -1,12 +1,13 @@
 #region Imports
-from abc import abstractclassmethod, abstractproperty
+from abc import abstractclassmethod, abstractproperty;
 #endregion Imports
+
 class ResponseBase:    
     def __init__(cls, rawResponse:str):
         cls._rawResponse = rawResponse;
 
     @abstractclassmethod
-    def ParseResponse(cls, rawResponse:str):
+    def ParseResponse(cls):
         pass;
     
     @abstractproperty

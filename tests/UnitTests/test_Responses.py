@@ -2,7 +2,7 @@
 import sys
 import unittest;
 sys.path.append('././src');
-import Response;
+import Models, Response;
 #also gross, clean this up
 import os
 absolutepath = os.path.abspath(__file__)
@@ -42,7 +42,6 @@ class test_Requests(unittest.TestCase):
         response = Response.GetGamesResponse(self.GamesResponseText);
         self.assertIsInstance(response, Response.GetGamesResponse);
         self.assertIsNotNone(response, response.Games);
-        self.assertIsInstance(response.ToDataFrame(), DataFrame);
     #endregion GetGamesResponse
     
     #region GetFutureOddsResponse
@@ -50,7 +49,6 @@ class test_Requests(unittest.TestCase):
         response = Response.GetFutureOddsResponse(self.FutureOddsResponseText);
         self.assertIsInstance(response, Response.GetFutureOddsResponse);
         self.assertIsNotNone(response, response.FutureOdds);
-        self.assertIsInstance(response.ToDataFrame(), DataFrame);
     #endregion GetFutureOddsResponse
     
     #region GetMarketsResponse
@@ -58,7 +56,7 @@ class test_Requests(unittest.TestCase):
         response = Response.GetMarketsResponse(self.MarketsResponseText);
         self.assertIsInstance(response, Response.GetMarketsResponse);
         self.assertIsNotNone(response, response.Markets);
-        self.assertIsInstance(response.ToDataFrame(), DataFrame);
+        self.assertIsInstance(response.Markets[0].game, Models.Game);
     #endregion GetMarketsResponse
     
     #region GetOddsResponse
@@ -66,7 +64,7 @@ class test_Requests(unittest.TestCase):
         response = Response.GetOddsResponse(self.OddsResponseText);
         self.assertIsInstance(response, Response.GetOddsResponse);
         self.assertIsNotNone(response, response.Odds);
-        self.assertIsInstance(response.ToDataFrame(), DataFrame);
+        self.assertIsInstance(response.Odds[0].game, Models.Game);
     #endregion GetOddsResponse
     
     #region GetFutureResponse
@@ -74,7 +72,6 @@ class test_Requests(unittest.TestCase):
         response = Response.GetFuturesResponse(self.FuturesResponseText);
         self.assertIsInstance(response, Response.GetFuturesResponse);
         self.assertIsNotNone(response, response.Futures);
-        self.assertIsInstance(response.ToDataFrame(), DataFrame);
     #endregion GetFuturesResponse
     
     #region GetFutureOddsResponse
@@ -82,7 +79,7 @@ class test_Requests(unittest.TestCase):
         response = Response.GetFutureOddsResponse(self.FutureOddsResponseText);
         self.assertIsInstance(response, Response.GetFutureOddsResponse);
         self.assertIsNotNone(response, response.FutureOdds);
-        self.assertIsInstance(response.ToDataFrame(), DataFrame);
+        self.assertIsInstance(response.FutureOdds[0].future, Models.Future);
     #endregion GetFutureOddsResponse
 
 if __name__=='__main__':

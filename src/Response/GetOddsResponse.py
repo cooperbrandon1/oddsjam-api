@@ -1,7 +1,6 @@
 #region Imports
 import json;
-import collections;
-from Models import Odds;
+from Models import Odds, Game;
 from Base import ResponseBase;
 #endregion Imports
 
@@ -13,6 +12,10 @@ class GetOddsResponse(ResponseBase):
     def ParseResponse(self, response:str):
         try:
             obj = json.loads(response);
-            return [Odds.fromDict(m) for m in obj] 
+            oddsObjects = [Odds.fromDict(m) for m in obj];
+            for o in oddsObjects:
+                o.game = Game.fromDict(o.game);
+                o.sports_book = o.sports_book['name']
+            return oddsObjects;
         except Exception as ex:
             return ex;
