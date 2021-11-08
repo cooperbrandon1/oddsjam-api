@@ -64,6 +64,19 @@ class test_Models(unittest.TestCase):
     def test_Odds_InvalidArgs_ShouldReturnTypeError(self):
         with self.assertRaises(TypeError):
             model = Models.Odds(name=1234);
+
+    def test_Odds_TypeConversion_ShouldReturnSuccess(self):
+        model = Models.Odds();
+        model.price = 3000;
+        model.AsDecimal();
+        self.assertEqual(model.price, 31.00)
+        model.AsAmerican();
+        self.assertEqual(model.price, 3000)
+        model.price = -3000;
+        model.AsDecimal();
+        self.assertEqual(round(model.price,2), 1.03)
+        model.AsAmerican();
+        self.assertEqual(model.price, -3000)
     #endregion Odds
     
     #region Futures
