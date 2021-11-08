@@ -34,7 +34,10 @@ class test_Requests(unittest.TestCase):
             self.FuturesResponseText =  json.dumps(j);
         with(open(dataPath+'GetFutureOddsResponse.json') as f):
             j = json.load(f);
-            self.GetFutureOddsResponseText =  json.dumps(j);
+            self.FutureOddsResponseText =  json.dumps(j);
+        with(open(dataPath+'GetScoresResponse.json') as f):
+            j = json.load(f);
+            self.ScoresResponseText =  json.dumps(j);
     #endregion Setup
     
     #region GetGamesResponse
@@ -43,13 +46,6 @@ class test_Requests(unittest.TestCase):
         self.assertIsInstance(response, Response.GetGamesResponse);
         self.assertIsNotNone(response, response.Games);
     #endregion GetGamesResponse
-    
-    #region GetFutureOddsResponse
-    def test_GetFutureOddsResponse_FutureOdds_ShouldReturnSuccess(self):
-        response = Response.GetFutureOddsResponse(self.FutureOddsResponseText);
-        self.assertIsInstance(response, Response.GetFutureOddsResponse);
-        self.assertIsNotNone(response, response.FutureOdds);
-    #endregion GetFutureOddsResponse
     
     #region GetMarketsResponse
     def test_GetMarketsResponse_Markets_ShouldReturnSuccess(self):
@@ -68,7 +64,7 @@ class test_Requests(unittest.TestCase):
     #endregion GetOddsResponse
     
     #region GetFutureResponse
-    def test_GetFutureResponse_FutureOdds_ShouldReturnSuccess(self):
+    def test_GetFutureResponse_Futures_ShouldReturnSuccess(self):
         response = Response.GetFuturesResponse(self.FuturesResponseText);
         self.assertIsInstance(response, Response.GetFuturesResponse);
         self.assertIsNotNone(response, response.Futures);
@@ -81,6 +77,15 @@ class test_Requests(unittest.TestCase):
         self.assertIsNotNone(response, response.FutureOdds);
         self.assertIsInstance(response.FutureOdds[0].future, Models.Future);
     #endregion GetFutureOddsResponse
+
+    #region GetScoresResponse
+    def test_GetScoresRequest_Scores_ShouldReturnSuccess(self):
+        response = Response.GetScoresResponse(self.ScoresResponseText);
+        self.assertIsInstance(response, Response.GetScoresResponse);
+        self.assertIsNotNone(response, response.Scores);
+        self.assertIsInstance(response.Scores[0].game, Models.Game);
+        self.assertIsInstance(response.Scores[0].period_scores[0], Models.PeriodScore);
+    #endregion GetScoresResponse
 
 if __name__=='__main__':
     unittest.main();

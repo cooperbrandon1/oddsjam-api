@@ -107,5 +107,20 @@ class test_Models(unittest.TestCase):
             model = Models.FutureOdds(name=1234);
     #endregion FutureOdds
     
+    
+    #region Scores
+    def test_Futures_NoArgs_ShouldReturnSuccess(self):
+        model = Models.Score();
+        self.assertIsInstance(model, Models.Score);
+        
+    def test_Futures_ValidArgs_ShouldReturnSuccess(self):
+        model = Models.Score(season_type='Playoffs');
+        self.assertIsInstance(model, Models.Score);
+        
+    def test_Futures_InvalidArgs_ShouldReturnTypeError(self):
+        with self.assertRaises(TypeError):
+            model = Models.Score(season_type=1234);
+    #endregion Scores
+
 if __name__ == '__main__':
     unittest.main();

@@ -89,6 +89,13 @@ class OddsJamClient():
         response = self.HandleAPICall(request);
         return Response.GetFutureOddsResponse(response.text);
     #endregion Future Odds
+
+    #region Scores
+    # def GetScores(self, page: int = None, sport: Enum.SportsEnum = None, league: str = None) -> Response.GetScoresResponse:
+    #     request = self.BuildRequest(Request.GetScoresRequest(Page = page, Sport=sport, League=league));
+    #     response = self.HandleAPICall(request);
+    #     return Response.GetFutureOddsResponse(response.text);
+    #endregion Scores
     
     #region API calls
     def HandleAPICall(self, request: requests.models.Request):

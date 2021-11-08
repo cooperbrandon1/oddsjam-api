@@ -104,5 +104,23 @@ class test_Requests(unittest.TestCase):
             request = Request.GetFutureOddsRequest(SportsBook=123);
     #endregion GetFutureOddsRequest
 
+    #region GetScoresRequest
+    def test_GetScoresRequest_NoArgs_ShouldReturnSuccess(self):
+        request = Request.GetScoresRequest();
+        self.assertIsInstance(request, Request.GetScoresRequest);
+
+    def test_GetScoresRequest_ValidArgs_ShouldReturnSuccess(self):
+        request = Request.GetScoresRequest(Page=1);
+        self.assertIsInstance(request, Request.GetScoresRequest);
+
+    def test_GetScoresRequest_InvalidArgs_ShouldReturnTypeError(self):
+        with self.assertRaises(TypeError):
+            request = Request.GetFutureOddsRequest(Page='1');
+
+    def test_GetScoresRequest_InvalidLeague_ShouldReturnValueError(self):
+        with self.assertRaises(TypeError):
+            request = Request.GetFutureOddsRequest(League=123);
+    #endregion GetFutureOddsRequest
+
 if __name__=='__main__':
     unittest.main();

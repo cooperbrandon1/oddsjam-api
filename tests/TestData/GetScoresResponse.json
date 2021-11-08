@@ -1,0 +1,186 @@
+[
+    {
+      "game": {
+        "id": 1,
+        "sport": "Baseball",
+        "league": "MLB",
+        "start_date": "2021-11-02T20:09:00-04:00",
+        "away_team": "Atlanta Braves",
+        "home_team": "Houston Astros",
+        "is_live": false
+      },
+      "period_scores": [
+        {
+          "period_number": 1,
+          "team": "home",
+          "score": 0
+        },
+        {
+          "period_number": 1,
+          "team": "away",
+          "score": 0
+        },
+        {
+          "period_number": 2,
+          "team": "home",
+          "score": 0
+        },
+        {
+          "period_number": 2,
+          "team": "away",
+          "score": 0
+        },
+        {
+          "period_number": 3,
+          "team": "home",
+          "score": 0
+        },
+        {
+          "period_number": 3,
+          "team": "away",
+          "score": 3
+        },
+        {
+          "period_number": 4,
+          "team": "home",
+          "score": 0
+        },
+        {
+          "period_number": 4,
+          "team": "away",
+          "score": 0
+        },
+        {
+          "period_number": 5,
+          "team": "home",
+          "score": 0
+        },
+        {
+          "period_number": 5,
+          "team": "away",
+          "score": 3
+        },
+        {
+          "period_number": 6,
+          "team": "home",
+          "score": 0
+        },
+        {
+          "period_number": 6,
+          "team": "away",
+          "score": 0
+        },
+        {
+          "period_number": 7,
+          "team": "home",
+          "score": 0
+        },
+        {
+          "period_number": 7,
+          "team": "away",
+          "score": 1
+        },
+        {
+          "period_number": 8,
+          "team": "home",
+          "score": 0
+        },
+        {
+          "period_number": 8,
+          "team": "away",
+          "score": 0
+        },
+        {
+          "period_number": 9,
+          "team": "home",
+          "score": 0
+        },
+        {
+          "period_number": 9,
+          "team": "away",
+          "score": 0
+        }
+      ],
+      "season_type": "Playoff",
+      "season_year": "2021",
+      "season_week": "",
+      "description": "World Series - Game 6",
+      "venue_name": "Minute Maid Park",
+      "venue_location": "Houston, Texas",
+      "status": "completed",
+      "period": null,
+      "clock": null,
+      "last_play": null,
+      "home_final_score": 0,
+      "away_final_score": 7,
+      "checked_date": "2021-11-06T13:35:18.262082-04:00",
+      "changed_date": "2021-11-06T13:35:18.262104-04:00"
+    },
+    {
+      "game": {
+        "id": 6,
+        "sport": "Basketball",
+        "league": "NBA",
+        "start_date": "2021-11-03T19:00:00-04:00",
+        "away_team": "New York Knicks",
+        "home_team": "Indiana Pacers",
+        "is_live": false
+      },
+      "period_scores": [
+        {
+          "period_number": 1,
+          "team": "home",
+          "score": 36
+        },
+        {
+          "period_number": 1,
+          "team": "away",
+          "score": 22
+        },
+        {
+          "period_number": 2,
+          "team": "home",
+          "score": 23
+        },
+        {
+          "period_number": 2,
+          "team": "away",
+          "score": 28
+        },
+        {
+          "period_number": 3,
+          "team": "home",
+          "score": 21
+        },
+        {
+          "period_number": 3,
+          "team": "away",
+          "score": 25
+        },
+        {
+          "period_number": 4,
+          "team": "home",
+          "score": 31
+        },
+        {
+          "period_number": 4,
+          "team": "away",
+          "score": 23
+        }
+      ],
+      "season_type": "Regular",
+      "season_year": "2021-2022",
+      "season_week": "",
+      "description": "New York Knicks vs Indiana Pacers",
+      "venue_name": "Gainbridge Fieldhouse",
+      "venue_location": "Indianapolis, IN",
+      "status": "completed",
+      "period": null,
+      "clock": null,
+      "last_play": null,
+      "home_final_score": 111,
+      "away_final_score": 98,
+      "checked_date": "2021-11-06T13:35:18.554406-04:00",
+      "changed_date": "2021-11-06T13:35:18.554415-04:00"
+    }
+  ]
