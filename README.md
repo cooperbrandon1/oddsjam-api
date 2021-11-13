@@ -7,7 +7,7 @@
 ## How do I use it?
 Start by installing the <code>oddsjam-api</code> package (currently only on TestPyPI):
 ```
-    pip install -i https://test.pypi.org/simple/ oddsjam-api
+    pip install oddsjam-api
 ```
 
 Create an instance of the <code>OddsJamClient</code>:
