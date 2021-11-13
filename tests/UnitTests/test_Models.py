@@ -94,30 +94,30 @@ class test_Models(unittest.TestCase):
     #endregion Futures
     
     #region FutureOdds
-    def test_Futures_NoArgs_ShouldReturnSuccess(self):
+    def test_FutureOdds_NoArgs_ShouldReturnSuccess(self):
         model = Models.FutureOdds();
         self.assertIsInstance(model, Models.FutureOdds);
         
-    def test_Futures_ValidArgs_ShouldReturnSuccess(self):
+    def test_FutureOdds_ValidArgs_ShouldReturnSuccess(self):
         model = Models.FutureOdds(name='TestName');
         self.assertIsInstance(model, Models.FutureOdds);
         
-    def test_Futures_InvalidArgs_ShouldReturnTypeError(self):
+    def test_FutureOdds_InvalidArgs_ShouldReturnTypeError(self):
         with self.assertRaises(TypeError):
             model = Models.FutureOdds(name=1234);
     #endregion FutureOdds
     
     
     #region Scores
-    def test_Futures_NoArgs_ShouldReturnSuccess(self):
+    def test_Scores_NoArgs_ShouldReturnSuccess(self):
         model = Models.Score();
         self.assertIsInstance(model, Models.Score);
         
-    def test_Futures_ValidArgs_ShouldReturnSuccess(self):
+    def test_Scores_ValidArgs_ShouldReturnSuccess(self):
         model = Models.Score(season_type='Playoffs');
         self.assertIsInstance(model, Models.Score);
         
-    def test_Futures_InvalidArgs_ShouldReturnTypeError(self):
+    def test_Scores_InvalidArgs_ShouldReturnTypeError(self):
         with self.assertRaises(TypeError):
             model = Models.Score(season_type=1234);
     #endregion Scores

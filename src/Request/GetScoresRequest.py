@@ -7,4 +7,6 @@ from Enum.SportsEnum import SportsEnum;
 @dataclass
 class GetScoresRequest(RequestBase):
     Page: int = None;
-    Sport: SportsEnum = None
+    Sport: SportsEnum = None;
+    League: str = None;
+    ApiPath: str = '/scores';

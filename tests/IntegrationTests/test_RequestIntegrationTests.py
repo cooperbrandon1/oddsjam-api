@@ -39,6 +39,8 @@ def mocked_requests_get(*args, **kwargs):
         return MockResponse(getJSON('GetFuturesResponse'), 200, getText('GetFuturesResponse'))
     elif '/future-odds' in args[0]:
         return MockResponse(getJSON('GetFutureOddsResponse'), 200, getText('GetFutureOddsResponse'))
+    elif '/scores' in args[0]:
+        return MockResponse(getJSON('GetScoresResponse'), 200, getText('GetScoresResponse'))
     else:
         return MockResponse(getJSON('GetOddsResponse'), 200, getText('GetOddsResponse'))
  
@@ -96,6 +98,12 @@ class test_RequestIntegrationTests(unittest.TestCase):
         response = self.Client.GetFutureOdds();
         self.assertIsNot(None,response.FutureOdds);
         self.assertIsInstance(response,Response.GetFutureOddsResponse);
+        
+    @mock.patch('requests.get', side_effect=mocked_requests_get)
+    def test_GetScores(self, mock_get):
+        response = self.Client.GetScores();
+        self.assertIsNot(None,response.Scores);
+        self.assertIsInstance(response,Response.GetScoresResponse);
     #endregion Success
 
 if __name__ == '__main__':
