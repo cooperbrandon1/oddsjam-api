@@ -1,7 +1,8 @@
 #region Imports
 from dataclasses import fields;
 from datetime import date
-from Enum.Meta import StringEnumMeta;
+from Base.ValidParameters import ValidSports, ValidSportsBooks;
+from Base.CustomExceptions import SportError, SportsBookError;
 #endregion Imports
 
 def EnforceTypes(cls):
@@ -9,14 +10,10 @@ def EnforceTypes(cls):
     for f in field_types:
         classAttr = getattr(cls,f);
         if(classAttr != None):
-            StringToEnum = type(field_types[f]) == StringEnumMeta and isinstance(classAttr, str);
-            #If the type of the destination attribute is an enum, and the incoming value is a string
-            if(StringToEnum):
-                #Check enums, ensuring that the incoming value is a valid value in the given enum
-                if(field_types[f].__contains__(classAttr) == False):
-                    raise ValueError(f + ' must be a valid value in ' + field_types[f].__name__);
-                else:
-                    setattr(cls,f,field_types[f].__getValueForString__(classAttr));
+            if(f == 'sport' and classAttr not in ValidSports):
+                raise SportError();
+            elif(f == 'sportsbook' and classAttr not in ValidSportsBooks):
+                raise SportsBookError();
             elif(isinstance(classAttr,field_types[f]) == False):
                 raise TypeError(f + ' must be of type ' + field_types[f].__name__);
             elif('Date' in f):

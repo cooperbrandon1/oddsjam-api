@@ -1,9 +1,11 @@
 #region Imports
-import Enum
 from Base.EnforceTypes import EnforceTypes;
+from Base.ValidParameters import ValidSportsBooks, ValidSports;
+from Base.CustomExceptions import SportError;
 #endregion Imports
 
-class RequestBase:    
+class RequestBase:
+
     @classmethod
     def GetArgString(cls):  
         #Get the list of attributes of the given subclass 
@@ -22,8 +24,6 @@ class RequestBase:
     def ConvertArg(cls,arg):
         if(type(arg) is int):
             return str(arg)
-        elif(type(arg) is Enum.SportsEnum or type(arg) is Enum.SportsBooksEnum):
-            return str(arg.value)
 
     def __post_init__(cls):
         EnforceTypes(cls);

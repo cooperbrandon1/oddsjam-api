@@ -8,8 +8,6 @@ class GetGamesResponse(ResponseBase):
     def __init__(self, response: str):
         super().__init__(response);
         obj = self.ParseResponse(response);
-        for g in obj:
-            g.sport = g.sport.value;
         self.Games = [g for g in obj]
 
     def ParseResponse(self, response:str):

@@ -3,7 +3,7 @@ import sys
 import unittest;
 sys.path.append('././src');
 import Request;
-import Enum;
+import Base;
 #endregion Imports
 
 class test_Requests(unittest.TestCase):
@@ -14,12 +14,12 @@ class test_Requests(unittest.TestCase):
         self.assertIsInstance(request, Request.GetGamesRequest);
 
     def test_GetGamesRequest_ValidArgs_ShouldReturnSuccess(self):
-        request = Request.GetGamesRequest(Page=1);
+        request = Request.GetGamesRequest(page=1);
         self.assertIsInstance(request, Request.GetGamesRequest);
 
     def test_GetGamesRequest_InvalidArgs_ShouldReturnTypeError(self):
         with self.assertRaises(TypeError):
-            request = Request.GetGamesRequest(Page='1');
+            request = Request.GetGamesRequest(page='1');
     #endregion GetGamesRequest
     
     #region GetLeaguesRequest
@@ -28,16 +28,16 @@ class test_Requests(unittest.TestCase):
         self.assertIsInstance(request, Request.GetLeaguesRequest);
 
     def test_GetLeaguesRequest_ValidArgs_ShouldReturnSuccess(self):
-        request = Request.GetLeaguesRequest(Sport=Enum.SportsEnum.football);
+        request = Request.GetLeaguesRequest(sport='football');
         self.assertIsInstance(request, Request.GetLeaguesRequest);
 
     def test_GetLeaguesRequest_InvalidArgs_ShouldReturnTypeError(self):
         with self.assertRaises(TypeError):
-            request = Request.GetLeaguesRequest(IsLive='123');
+            request = Request.GetLeaguesRequest(isLive='123');
 
     def test_GetLeaguesRequest_InvalidSport_ShouldReturnValueError(self):
-        with self.assertRaises(TypeError):
-            request = Request.GetLeaguesRequest(Sport=123);
+        with self.assertRaises(Base.SportError):
+            request = Request.GetLeaguesRequest(sport=123);
     #endregion GetLeaguesRequest
     
     #region GetMarketsRequest
@@ -46,12 +46,12 @@ class test_Requests(unittest.TestCase):
         self.assertIsInstance(request, Request.GetMarketsRequest);
 
     def test_GetMarketsRequest_ValidArgs_ShouldReturnSuccess(self):
-        request = Request.GetMarketsRequest(Page=1);
+        request = Request.GetMarketsRequest(page=1);
         self.assertIsInstance(request, Request.GetMarketsRequest);
 
     def test_GetMarketsRequest_InvalidArgs_ShouldReturnTypeError(self):
         with self.assertRaises(TypeError):
-            request = Request.GetMarketsRequest(Page='1');
+            request = Request.GetMarketsRequest(page='1');
     #endregion GetMarketsRequest
     
     #region GetOddsRequest
@@ -60,12 +60,12 @@ class test_Requests(unittest.TestCase):
         self.assertIsInstance(request, Request.GetOddsRequest);
 
     def test_GetOddsRequest_ValidArgs_ShouldReturnSuccess(self):
-        request = Request.GetOddsRequest(Page=1);
+        request = Request.GetOddsRequest(page=1);
         self.assertIsInstance(request, Request.GetOddsRequest);
 
     def test_GetOddsRequest_InvalidArgs_ShouldReturnTypeError(self):
         with self.assertRaises(TypeError):
-            request = Request.GetOddsRequest(Page='1');
+            request = Request.GetOddsRequest(page='1');
     #endregion GetOddsRequest
 
     #region GetFuturesRequest
@@ -74,16 +74,16 @@ class test_Requests(unittest.TestCase):
         self.assertIsInstance(request, Request.GetFuturesRequest);
 
     def test_GetFuturesRequest_ValidArgs_ShouldReturnSuccess(self):
-        request = Request.GetFuturesRequest(Page=1);
+        request = Request.GetFuturesRequest(page=1);
         self.assertIsInstance(request, Request.GetFuturesRequest);
 
     def test_GetFuturesRequest_InvalidArgs_ShouldReturnTypeError(self):
         with self.assertRaises(TypeError):
-            request = Request.GetFuturesRequest(Page='1');
+            request = Request.GetFuturesRequest(page='1');
 
     def test_GetFuturesRequest_InvalidSport_ShouldReturnValueError(self):
-        with self.assertRaises(TypeError):
-            request = Request.GetFuturesRequest(Sport=123);
+        with self.assertRaises(Base.SportError):
+            request = Request.GetFuturesRequest(sport=123);
     #endregion GetFuturesRequest
 
     #region GetFutureOddsRequest
@@ -92,16 +92,16 @@ class test_Requests(unittest.TestCase):
         self.assertIsInstance(request, Request.GetFutureOddsRequest);
 
     def test_GetFutureOddsRequest_ValidArgs_ShouldReturnSuccess(self):
-        request = Request.GetFutureOddsRequest(Page=1);
+        request = Request.GetFutureOddsRequest(page=1);
         self.assertIsInstance(request, Request.GetFutureOddsRequest);
 
     def test_GetFutureOddsRequest_InvalidArgs_ShouldReturnTypeError(self):
         with self.assertRaises(TypeError):
-            request = Request.GetFutureOddsRequest(Page='1');
+            request = Request.GetFutureOddsRequest(page='1');
 
     def test_GetFutureOddsRequest_InvalidSportsBook_ShouldReturnValueError(self):
-        with self.assertRaises(TypeError):
-            request = Request.GetFutureOddsRequest(SportsBook=123);
+        with self.assertRaises(Base.SportsBookError):
+            request = Request.GetFutureOddsRequest(sportsbook=123);
     #endregion GetFutureOddsRequest
 
     #region GetScoresRequest
@@ -110,16 +110,16 @@ class test_Requests(unittest.TestCase):
         self.assertIsInstance(request, Request.GetScoresRequest);
 
     def test_GetScoresRequest_ValidArgs_ShouldReturnSuccess(self):
-        request = Request.GetScoresRequest(Page=1);
+        request = Request.GetScoresRequest(page=1);
         self.assertIsInstance(request, Request.GetScoresRequest);
 
     def test_GetScoresRequest_InvalidArgs_ShouldReturnTypeError(self):
         with self.assertRaises(TypeError):
-            request = Request.GetFutureOddsRequest(Page='1');
+            request = Request.GetFutureOddsRequest(page='1');
 
     def test_GetScoresRequest_InvalidLeague_ShouldReturnValueError(self):
         with self.assertRaises(TypeError):
-            request = Request.GetFutureOddsRequest(League=123);
+            request = Request.GetFutureOddsRequest(league=123);
     #endregion GetFutureOddsRequest
 
 if __name__=='__main__':

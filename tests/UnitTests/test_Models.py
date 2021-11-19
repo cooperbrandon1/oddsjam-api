@@ -1,7 +1,7 @@
 #region Imports
 import sys
 sys.path.append('././src');
-from Enum.SportsEnum import SportsEnum;
+from Base.ValidParameters import ValidSports, ValidSportsBooks;
 import Models;
 import unittest;
 #endregion Imports
@@ -15,7 +15,6 @@ class test_Models(unittest.TestCase):
         
     def test_Game_ValidArgs_ShouldReturnSuccess(self):
         model = Models.Game(id=1);
-        model = Models.Game(sport=SportsEnum.football);
         model = Models.Game(sport='football');
         self.assertIsInstance(model, Models.Game);
         

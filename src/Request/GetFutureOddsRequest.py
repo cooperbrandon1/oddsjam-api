@@ -1,17 +1,17 @@
 #region Imports
 from Base import RequestBase;
-from Enum import SportsBooksEnum;
-from dataclasses import dataclass
-
-from Enum.SportsEnum import SportsEnum;
+from typing import Literal;
+from dataclasses import dataclass;
 #endregion Imports
 
 @dataclass
 class GetFutureOddsRequest(RequestBase):
-    Page: int = None;
-    SportsBook: SportsBooksEnum = None;
-    FutureName: str = None;
-    Sport: SportsEnum = None;
-    League: str = None;
-    FutureID: int = None;
-    ApiPath: str = '/future-odds';
+    page: int = None;
+    sportsbook: str = None;
+    futureName: str = None;
+    sport: str = None;
+    league: str = None;
+    futureID: int = None;
+
+    def ApiPath(cls) -> str:
+        return '/future-odds';

@@ -1,7 +1,6 @@
 #region Imports
 import datetime;
 from dataclasses import dataclass;
-from Enum import SportsBooksEnum;
 from Models import Game;
 from Base import ModelBase;
 #endregion Imports
@@ -10,7 +9,7 @@ from Base import ModelBase;
 class Odds(ModelBase):
     game: Game = None
     market_name: str = None
-    sports_book: SportsBooksEnum = None
+    sports_book: str = None
     name: str = None
     price: float = None
     is_main: bool = None

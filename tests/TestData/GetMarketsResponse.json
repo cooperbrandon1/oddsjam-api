@@ -142,5 +142,17 @@
       "is_live":false
     },
     "name":"Lead After 3 Innings"
+  },
+  {
+    "game":{
+      "id":2398,
+      "sport":"baseball",
+      "league":"MLB",
+      "start_date":"2021-10-01T21:45:00-04:00",
+      "away_team":"Atlanta Braves",
+      "home_team":"Boston Red Sox",
+      "is_live":false
+    },
+    "name":"Lead After 3 Innings"
   }
 ]

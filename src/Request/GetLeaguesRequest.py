@@ -1,11 +1,13 @@
 #region Imports
 from dataclasses import dataclass;
 from Base import RequestBase;
-from Enum.SportsEnum import SportsEnum;
+from typing import Literal;
 #endregion Imports
 
 @dataclass
 class GetLeaguesRequest(RequestBase):
-    Sport: SportsEnum = None;
-    IsLive: bool = None;
-    ApiPath: str = '/leagues';
+    sport: str = None;
+    isLive: bool = None;
+
+    def ApiPath(cls) -> str:
+        return '/leagues';

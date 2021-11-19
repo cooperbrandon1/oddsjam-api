@@ -75,7 +75,7 @@ class test_Requests(unittest.TestCase):
         response = Response.GetFutureOddsResponse(self.FutureOddsResponseText);
         self.assertIsInstance(response, Response.GetFutureOddsResponse);
         self.assertIsNotNone(response, response.FutureOdds);
-        self.assertIsInstance(response.FutureOdds[0].future, Models.Future);
+        self.assertIsInstance(response.FutureOdds[0].future, Models.Future);    
     #endregion GetFutureOddsResponse
 
     #region GetScoresResponse

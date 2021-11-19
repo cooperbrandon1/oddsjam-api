@@ -29,12 +29,32 @@ Parameters are not required for any function call, but can be provided as desire
 
 ```
     from OddsJamClient import OddsJamClient;
-    from Enum.SportsEnum import SportsEnum;
     Client = OddsJamClient(YOUR_API_KEY);
-    GamesResponse = Client.GetGames(league='ncaa', sport=SportsEnum.football);
+    GamesResponse = Client.GetGames(league='ncaa', sport='football');
 ```
 
-And can be accessed by as parsed objects:
+Parameters will raise specific errors:
+
+```
+    GamesResponse = Client.GetGames(sport='curling'); 
+    #Raises SportError, with a list of valid values
+
+    OddsResponse = Client.GetOdds(sportsbook='212 Bet');
+    #Raises SportsBookError, with a list of valid values
+```
+
+Note: Sport and SportsBook parameters are *case insensitive*
+
+Accessing the object of a response requires accessing the response's object:
+
+```    
+    from OddsJamClient import OddsJamClient;
+    Client = OddsJamClient(YOUR_API_KEY);
+    GamesResponse = Client.GetGames();
+    Games = GamesResponse.Games;
+```
+
+List comprehension can also be used to access objects:
 
 ```
     AwayTeams = [g.away_team for g in GamesResponse.Games];

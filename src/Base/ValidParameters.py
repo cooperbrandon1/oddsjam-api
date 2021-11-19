@@ -1,0 +1,2 @@
+ValidSports = ['football', 'basketball', 'baseball', 'mma', 'boxing', 'hockey', 'soccer', 'tennis', 'golf', 'motorsports', 'esports']
+ValidSportsBooks = ['Pinnacle', '5Dimes', 'DraftKings', 'BetMGM', 'WynnBET', 'theScore', 'Bally Bet', 'Elite Sportsbook', 'FOX Bet', 'FanDuel', 'Points Bet', 'Caesars', 'Barstool', 'Borgota', 'Unibet', 'BetRivers', 'Wind Creek', 'BetAnySports', 'BookMaker', 'SugarHouse', 'TwinSpires', 'BetUS', 'bwin', 'Betfred', 'Betfair', 'BetOnline', 'Betway', 'Bovada', 'Bodog','Casumo', '10Bet', '888 sport (Canada)', 'MyBookie', 'Betcris','OddsJam']

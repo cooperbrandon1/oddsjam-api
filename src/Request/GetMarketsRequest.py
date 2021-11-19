@@ -5,7 +5,9 @@ from Base import RequestBase;
 
 @dataclass
 class GetMarketsRequest(RequestBase):
-    Page: int = None;
-    GameId: int = None;
-    IsLive: bool = None;
-    ApiPath: str = '/markets';
+    page: int = None;
+    gameId: int = None;
+    isLive: bool = None;
+
+    def ApiPath(cls) -> str:
+        return '/markets';

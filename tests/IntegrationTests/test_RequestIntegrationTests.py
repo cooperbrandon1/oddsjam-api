@@ -1,5 +1,6 @@
 #region Imports
-import sys;
+import sys
+import unittest;
 sys.path.append('././src');
 sys.path.append('./');
 from OddsJamClient import OddsJamClient;
@@ -43,8 +44,6 @@ def mocked_requests_get(*args, **kwargs):
         return MockResponse(getJSON('GetScoresResponse'), 200, getText('GetScoresResponse'))
     else:
         return MockResponse(getJSON('GetOddsResponse'), 200, getText('GetOddsResponse'))
- 
-    return MockResponse(None, 404)
 #endregion Mock requests.get
 
 def getJSON(fileName):
@@ -105,6 +104,15 @@ class test_RequestIntegrationTests(unittest.TestCase):
         self.assertIsNot(None,response.Scores);
         self.assertIsInstance(response,Response.GetScoresResponse);
     #endregion Success
+
+    #region Test With Parameters
+    @mock.patch('requests.get', side_effect=mocked_requests_get)
+    def test_GetMarketsWithParams(self, mock_get):
+        Client = OddsJamClient('MOCK_API_KEY');
+        response = self.Client.GetMarkets(gameId=2398);
+        self.assertIsNot(None,response.Markets);
+        self.assertIsInstance(response,Response.GetMarketsResponse);
+    #endregion Test With Parameters
 
 if __name__ == '__main__':
     pass;

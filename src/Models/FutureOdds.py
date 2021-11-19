@@ -2,13 +2,12 @@
 from Base import ModelBase;
 from dataclasses import dataclass;
 from Models import Future;
-from Enum import SportsBooksEnum;
 #endregion Imports
 
 @dataclass
 class FutureOdds(ModelBase):
     future: Future = None;
-    sports_book: SportsBooksEnum = None;
+    sports_book: str = None;
     name: str = None;
     price: float = None;
     checked_date: str = None;
