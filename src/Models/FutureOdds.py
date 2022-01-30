@@ -11,4 +11,3 @@ class FutureOdds(ModelBase):
     name: str = None;
     price: float = None;
     checked_date: str = None;
-    changed_date: str = None;

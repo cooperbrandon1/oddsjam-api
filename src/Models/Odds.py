@@ -8,14 +8,16 @@ from Base import ModelBase;
 @dataclass
 class Odds(ModelBase):
     game: Game = None
+    sports_book_name: str = None
     market_name: str = None
-    sports_book: str = None
     name: str = None
     price: float = None
     is_main: bool = None
     is_live: bool = None
+    deep_link_url: str = None
     checked_date: datetime = None
     changed_date: datetime = None
+    bet_points: float = None
     __type__ = 'American';
     
     def AsDecimal(self):
