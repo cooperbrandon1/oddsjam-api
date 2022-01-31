@@ -12,7 +12,7 @@ def EnforceTypes(cls):
         if(classAttr != None):
             if(f == 'sport' and classAttr not in ValidSports):
                 raise SportError();
-            elif(f == 'sportsbook' and classAttr not in ValidSportsBooks):
+            elif((f == 'sportsbook' and classAttr not in ValidSportsBooks) or (f =='sports_book_name' and classAttr not in ValidSportsBooks)):
                 raise SportsBookError();
             elif(isinstance(classAttr,field_types[f]) == False):
                 raise TypeError(f + ' must be of type ' + field_types[f].__name__);

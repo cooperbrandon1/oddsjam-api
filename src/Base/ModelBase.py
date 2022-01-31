@@ -8,7 +8,10 @@ class ModelBase:
         objProps = dict.keys();
         instance = cls();
         for k in objProps:
-            setattr(instance, k, dict[k])
+            try:
+                setattr(instance, k, dict[k])
+            except Exception as ex:
+                return ex;
         return instance
 
     def __post_init__(cls):
