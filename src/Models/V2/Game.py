@@ -12,3 +12,4 @@ class Game(ModelBase):
     away_team: str = None;
     home_team: str = None;
     is_live: bool = None;
+    tournament: str = None;
